@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:skapp/pages/login/index.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -120,7 +121,7 @@ class _SplashWidgetState extends State<SplashWidget> {
       children: <Widget>[
         Observer(
           builder: (_) => Offstage(
-            child: App(),
+            child: _global.appConfig['login_necessary'] ? Login() : App(),
             offstage: _global.showAd,
           ),
         ),

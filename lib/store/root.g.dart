@@ -69,6 +69,21 @@ mixin _$Global on GlobalMobx, Store {
     });
   }
 
+  final _$appConfigAtom = Atom(name: 'GlobalMobx.appConfig');
+
+  @override
+  dynamic get appConfig {
+    _$appConfigAtom.reportRead();
+    return super.appConfig;
+  }
+
+  @override
+  set appConfig(dynamic value) {
+    _$appConfigAtom.reportWrite(value, super.appConfig, () {
+      super.appConfig = value;
+    });
+  }
+
   final _$appAdsAtom = Atom(name: 'GlobalMobx.appAds');
 
   @override
@@ -157,6 +172,13 @@ mixin _$Global on GlobalMobx, Store {
     _$isShowListAtom.reportWrite(value, super.isShowList, () {
       super.isShowList = value;
     });
+  }
+
+  final _$getAppConfigAsyncAction = AsyncAction('GlobalMobx.getAppConfig');
+
+  @override
+  Future<dynamic> getAppConfig() {
+    return _$getAppConfigAsyncAction.run(() => super.getAppConfig());
   }
 
   final _$getAppAdsAsyncAction = AsyncAction('GlobalMobx.getAppAds');
@@ -251,6 +273,7 @@ mixin _$Global on GlobalMobx, Store {
 showAd: ${showAd},
 updataApp: ${updataApp},
 isAllowProtocol: ${isAllowProtocol},
+appConfig: ${appConfig},
 appAds: ${appAds},
 title: ${title},
 theme: ${theme},

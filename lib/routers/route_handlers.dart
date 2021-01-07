@@ -6,6 +6,7 @@ import './../pages/vipvideo/index.dart';
 import './../pages/preview/index.dart';
 import './../pages/dlna/index.dart';
 import './../pages/history/index.dart';
+import './../pages/login/index.dart';
 
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
@@ -54,4 +55,9 @@ Handler dlnaRouteHandler = Handler(
 Handler historyRouteHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return HistoryPage();
+});
+
+Handler loginRouteHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return Login();
 });

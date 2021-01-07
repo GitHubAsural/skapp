@@ -48,7 +48,7 @@ abstract class GlobalMobx with Store {
     Colors.brown,
   ];
 
-  // String url = API.APP_CONFIG;
+  String url = API.APP_CONFIG;
   String adsUrl = API.APP_ADS;
 
   Future getThemeIndex() async {
@@ -67,8 +67,8 @@ abstract class GlobalMobx with Store {
   @observable
   bool isAllowProtocol = false; // 是否同意协议
 
-  // @observable
-  // AppConfigDao appConfig;
+  @observable
+  var appConfig;
 
   @observable
   AppAdsDao appAds;
@@ -145,12 +145,12 @@ abstract class GlobalMobx with Store {
     prefs.setBool('isAllowProtocol', value);
   }
 
-  // @action
-  // Future<dynamic> getAppConfig() async {
-  //   var req = HttpRequest(API.BASE_SK_URL);
-  //   final res = await req.get(url);
-  //   this.appConfig = AppConfigDao.fromJson(res);
-  // }
+  @action
+  Future<dynamic> getAppConfig() async {
+    var req = HttpRequest(API.BASE_SK_URL);
+    final res = await req.get(url);
+    this.appConfig = res;
+  }
 
   @action
   Future<dynamic> getAppAds() async {

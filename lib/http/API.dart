@@ -4,8 +4,8 @@ typedef RequestCallBack<T> = void Function(T value);
 
 class API {
   static SharedPreferences _prefs;
-  static const BASE_SK_URL = 'https://sk.ncer.top';
-  // static const BASE_SK_URL = 'http://192.168.0.108:8000';
+  // static const BASE_SK_URL = 'https://sk.ncer.top';
+  static const BASE_SK_URL = 'http://192.168.0.108:8000';
   // static const BASE_SK_URL = 'http://192.168.5.190:8000';
   // static const BASE_SK_URL = 'http://192.168.0.111:8000';
   // static const BASE_SK_URL = 'http://192.168.2.201:8000';
@@ -21,7 +21,7 @@ class API {
   static const TYPE_ALL = '/type/all'; // 所有分类信息
   static const MOVIE_ALL = '/vod/total'; // 所有电影总数和今日更新数
   // app配置
-  // static const APP_CONFIG = '/app/config';
+  static const APP_CONFIG = '/app/config';
   static const APP_ADS = '/app/ads';
   static const APP_VIDEO_INFO = '/app/vipvideoforapp';
   // static const APP_SECRET_LIVE_KEY = 'app/secretlivecheck';

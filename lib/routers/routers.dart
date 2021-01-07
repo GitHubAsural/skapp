@@ -19,6 +19,8 @@ class Routes {
   static String dlna = "/dlna";
   // 历史记录
   static String history = "/history";
+  // 登录页
+  static String login = "/login";
 
   static void configureRoutes(CustomRouter.Router router) {
     router.notFoundHandler = CustomRouter.Handler(
@@ -33,6 +35,7 @@ class Routes {
     router.define(vipvideo, handler: vipvideoRouteHandler);
     router.define(dlna, handler: dlnaRouteHandler);
     router.define(history, handler: historyRouteHandler);
+    router.define(login, handler: loginRouteHandler);
     // router.define(demoSimpleFixedTrans,
     //     handler: demoRouteHandler, transitionType: TransitionType.inFromLeft);
   }
